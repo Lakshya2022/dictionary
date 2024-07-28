@@ -1,0 +1,39 @@
+main {
+    width: 75%;
+    margin: 2em auto;
+    display: grid;
+    place-items: center;
+    row-gap: 1em;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr auto;
+    grid-template-areas: 
+    "header header header" 
+    ". search ." 
+    ". result .";
+}
+
+#header {
+    grid-area: header;
+    justify-self: center;
+}
+
+#search {
+    grid-area: search;
+}
+
+#result {
+    grid-area: result;
+}
+
+@media all and (max-width: 500px) {
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+
+    main {
+        grid-template-areas: "header" "search" "result";
+        grid-template-columns: 306px;
+        row-gap: 1.5em;
+    }
+}
